@@ -59,7 +59,7 @@ alias gbsg='git bisect good'
 alias gbsr='git bisect reset'
 alias gbss='git bisect start'
 
-alias gc='git commit -v'
+#alias gc='git commit -v'
 alias gc!='git commit -v --amend'
 alias gcn!='git commit -v --no-edit --amend'
 alias gca='git commit -v -a'
@@ -195,6 +195,8 @@ alias gmum='git merge upstream/master'
 alias gma='git merge --abort'
 
 alias gp='git push'
+# git push set upstream to origin with current branch name when first pushing a branch to remote origin
+alias gpo='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 alias gpd='git push --dry-run'
 alias gpoat='git push origin --all && git push origin --tags'
 compdef _git gpoat=git-push
@@ -246,3 +248,32 @@ alias glum='git pull upstream master'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
+
+# GIT shortcuts
+alias gb='git branch'
+alias gmt='git mergetool -y'
+alias gis='git his'
+alias gs='git status -sb'
+alias glss='git gll --name-status'
+alias gd='git diff'
+alias go='git checkout'
+alias gcm='git commit -m'
+alias gob='git checkout -b'
+alias gom='git checkout master'
+alias gll='git gll'
+alias gls='git --no-pager gll -n 7' # git log short
+alias gr='git rebase'
+alias gm='git merge'
+alias ga='git add'
+alias gp='git push --follow-tags'
+alias gpp='git pull'
+alias gpr='git pull --rebase'
+
+function gc () {
+    if [[ $1 == -* ]]; then
+        git commit $*
+    else
+        git commit -m "$*"
+    fi
+}
+
