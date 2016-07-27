@@ -252,7 +252,7 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 # GIT shortcuts
 alias gb='git branch'
 alias gmt='git mergetool -y'
-alias gis='git his'
+alias gis='git log --color=always --graph --pretty=format:"%Cred%h%Creset %Cgreen(%cr)%Creset %s %C(yellow)%d%Creset %C(blue)[%an]%Creset" --abbrev-commit --date=relative'
 alias gs='git status -sb'
 alias glss='git gll --name-status'
 alias gd='git diff'
@@ -260,7 +260,7 @@ alias go='git checkout'
 alias gcm='git commit -m'
 alias gob='git checkout -b'
 alias gom='git checkout master'
-alias gll='git gll'
+alias gll='git log --color=always --pretty=format:"%C(yellow)%h%Creset %s %C(red)%d%Creset %C(magenta)[%cn]%Creset %C(cyan)(%cr)%Creset" --abbrev-commit'
 alias gls='git --no-pager gll -n 7' # git log short
 alias gr='git rebase'
 alias gm='git merge'
