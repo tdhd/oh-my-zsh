@@ -1,0 +1,38 @@
+# auf integration deployen
+git checkout integration
+git commit --allow-empty -m "ship to integration"
+# push current branch to integration in remote origin, overwriting everything before that
+git push -f origin HEAD:integration
+
+# sync a branch HARD to another branch
+git checkout branchtoreset
+git reset --hard branchtosyncto
+
+# change remote origin
+git remote -v
+# origin  https://github.com/USERNAME/REPOSITORY.git (fetch)
+# origin  https://github.com/USERNAME/REPOSITORY.git (push)
+Change your remote's URL from HTTPS to SSH with the git remote set-url command.
+git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
+
+# rebase (integrate a change in master into a feature branch)
+git checkout feature_branch
+git rebase master
+git push -f (because rewrote history)
+
+
+# cherry pick a commit from (possibly another branch)
+git cherry-pick <hash> # this applies the one commit to the current branch
+
+# cherry pick multiple commits including 2391...
+git cherry-pick 2391cd4^..1d701db
+# -> use case:
+rebase a branch B, which was branched off another A. A was already rebased on master, squashed commits and merged to master
+
+# merge a rebased feature branch in master
+gom
+git merge --no-ff feature # no ff, creates an explicit merge commit
+
+# SQUASH commits (last two commits)
+git reset --soft HEAD~2
+gc msg
