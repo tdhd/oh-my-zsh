@@ -151,15 +151,15 @@ bar {
 
 # intellij
 
-bindsym $mod+Shift+p exec /home/phil/Downloads/idea-IC-143.382.35/bin/idea.sh
+bindsym $mod+Shift+p exec /home/ppschmidt/Downloads/idea-IC-162.2032.8/bin/idea.sh
 bindsym $mod+Shift+t exec /usr/bin/thunderbird
 bindsym $mod+Shift+o exec /usr/bin/firefox
-bindsym $mod+Shift+i exec /opt/google/chrome/chrome --profile-directory=Default --app-id=fhbjgbiflinjbdggehcddcbncdddomop
+#bindsym $mod+Shift+i exec /opt/google/chrome/chrome --profile-directory=Default --app-id=fhbjgbiflinjbdggehcddcbncdddomop
 bindsym $mod+Shift+n exec i3lock
 
 #exec /usr/bin/ssh-agent
 #exec --no-startup-id /usr/bin/unity-settings-daemon
-exec --no-startup-id /home/phil/init.sh
+###exec --no-startup-id /home/phil/init.sh
 
 # instead of exit with a 
 # i3-msg exit
@@ -175,6 +175,8 @@ exec --no-startup-id /home/phil/init.sh
 #bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 bindsym $mod+Shift+u exec amixer -D pulse sset Master 5%+
 bindsym $mod+Shift+y exec amixer -D pulse sset Master 5%-
+bindsym $mod+m exec amixer -c 0 set Master playback 0% mute
+bindsym $mod+Shift+m exec amixer -c 0 set Master playback 36% unmute; exec amixer -c 0 set Headphone playback 36% unmute
 
 exec /usr/lib/unity-settings-daemon/unity-settings-daemon
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
@@ -183,3 +185,4 @@ exec /usr/bin/gnome-keyring-daemon -r -d
 #exec /usr/bin/unity-settings-daemon
 #exec /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg
 #export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+#exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
