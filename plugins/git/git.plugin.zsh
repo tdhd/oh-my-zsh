@@ -260,6 +260,7 @@ alias go='git checkout'
 alias gcm='git commit -m'
 alias gob='git checkout -b'
 alias gom='git checkout master'
+alias god='git checkout develop'
 alias gll='git log --color=always --pretty=format:"%C(yellow)%h%Creset %s %C(red)%d%Creset %C(magenta)[%cn]%Creset %C(cyan)(%cr)%Creset" --abbrev-commit'
 alias gls='git --no-pager gll -n 7' # git log short
 alias gr='git rebase'
