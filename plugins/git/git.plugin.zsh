@@ -269,6 +269,7 @@ alias ga='git add'
 alias gp='git push --follow-tags'
 alias gpp='git pull'
 alias gpr='git pull --rebase'
+alias gbh="git for-each-ref --sort=committerdate --format='  %(committerdate:short)%09%(refname:short)'"
 
 function gc () {
     if [[ $1 == -* ]]; then
