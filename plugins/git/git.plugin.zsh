@@ -279,3 +279,4 @@ function gc () {
     fi
 }
 
+alias sshe='f() { ssh -i ~/.ssh/some.pem hadoop@$1 };f'
