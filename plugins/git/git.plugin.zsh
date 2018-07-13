@@ -279,4 +279,6 @@ function gc () {
     fi
 }
 
+# # https://stackoverflow.com/questions/34340575/zsh-alias-with-parameter
 alias sshe='f() { ssh -i ~/.ssh/some.pem hadoop@$1 };f'
+
